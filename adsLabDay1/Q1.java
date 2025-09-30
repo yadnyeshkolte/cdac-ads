@@ -1,4 +1,17 @@
 package adsLabDay1;
+/*
+Accept 2 String input from users like, 
+Please Enter the String 1: india
+Please Enter the String 2: karnataka
+print it like
+
+* * * i * * * * * 
+k a r n a t a k a 
+* * * d * * * * * 
+* * * i * * * * * 
+* * * a * * * * * 
+
+ */
 import java.util.Scanner;
 public class Q1 {
 	public static void main(String[] args) {
