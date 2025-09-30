@@ -19,16 +19,23 @@ public class Hello {
 	   int indexc = 0;
 	   
 	   boolean bool = false;
+	   boolean breakbool = false;
 	   for(int i=0;i<s1.length();i++) {
 		   for(int j=0;j<s2.length();j++) {
 			   if(s1.charAt(i)==s2.charAt(j)) {
 				   indexr = i; //0
 				   indexc = j; 
 				   bool = true;
+				   breakbool = true;
 				   break;
 			   }
 		   }
+		   if(breakbool == true) {
+			   break;
+		   }
 	   }
+	   System.out.println(indexr);
+	   System.out.println(indexc);
 	   if(bool == false) {
 		   System.out.println("Cannot have similer");
 	   }
