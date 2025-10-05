@@ -1,0 +1,45 @@
+{
+
+  "version": "2.0.0",
+
+  "tasks": [
+
+    {
+
+      "label": "Run Java with File Input/Output",
+
+      "type": "shell",
+
+      "command": "cmd.exe",
+
+      "args": [
+
+        "/c",
+
+        "javac ${fileBasename} && java -cp . ${fileBasenameNoExtension} < input.txt > output.txt"
+
+      ],
+
+      "group": {
+
+        "kind": "build",
+
+        "isDefault": true
+
+      },
+
+      "options": {
+
+        "cwd": "C:\\Users\\Yadnyesh Kolte\\eclipse-workspace\\CdacJava\\cdac-ads\\Basics" //change dir
+
+      },
+
+      "problemMatcher": [],
+
+      "detail": "Compiles the current Java file and runs it with input redirection from input.txt and output redirection to output.txt"
+
+    }
+
+  ]
+
+}
