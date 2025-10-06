@@ -1,4 +1,5 @@
-package hello;
+package adsLabDay3;
+
 import java.util.Arrays;
 import java.util.Scanner;
 import java.util.HashMap;
@@ -45,12 +46,9 @@ public class Padosan {
 							if(arr[i][k] == arr[j][m] && arr[i][k+1]==arr[j][m+1]) {
 
 								count++;
-
 							}
 						}
-
 					}
-
 				}
 				if(count==2) {
 					extCount++;
@@ -59,7 +57,7 @@ public class Padosan {
 			}
 			hp.put(i+1, extCount);
 		}
-		System.out.println("hi");
+		System.out.println("Output is Given Below");
 		
 		for(Map.Entry<Integer, Integer> p: hp.entrySet()) {
 			System.out.println(p.getKey()+" "+p.getValue());
