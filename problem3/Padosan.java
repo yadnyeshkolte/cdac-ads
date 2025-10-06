@@ -1,4 +1,4 @@
-package adsLabDay3;
+package problem3;
 
 import java.util.Arrays;
 import java.util.Scanner;
@@ -8,7 +8,7 @@ public class Padosan {
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
 		int n = scan.nextInt();
-		int[][] arr = new int[4][8];
+		int[][] arr = new int[n][8];
 		for(int i=0;i<arr.length;i++) {
 			for(int j=0;j<arr[i].length;j++) {
 				arr[i][j] = scan.nextInt();
@@ -44,7 +44,6 @@ public class Padosan {
 						for(int m=0;m<arr[j].length-1;m=m+2) {
 
 							if(arr[i][k] == arr[j][m] && arr[i][k+1]==arr[j][m+1]) {
-
 								count++;
 							}
 						}

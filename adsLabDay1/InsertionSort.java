@@ -14,7 +14,7 @@ public class InsertionSort {
 		insertionSort(arr);
 		System.out.println(Arrays.toString(arr));
 	}
-	public static void 	insertionSort(int[] arr) {
+	public static void insertionSort(int[] arr) {
 		for(int i = 1;i<arr.length;i++)
 		{
 			int key = arr[i];
