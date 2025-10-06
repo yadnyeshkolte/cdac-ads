@@ -17,15 +17,14 @@ public class FibonacciMemoization {
 		System.out.println(Arrays.toString(arr));
 	}
 	public static int fibona(int n) {
-
-		if(arr[n]!=-1) {
-			return arr[n];
-		}
-		else if(n==0 || n==1){
+		if(n==0 || n==1){
 			//important;
 			arr[0] = 0;
 			arr[1] = 1;
 			return n;
+		}
+		else if(arr[n]!=-1) {
+			return arr[n];
 		}
 		else {
 			int fib = fibona(n-1)+fibona(n-2);
