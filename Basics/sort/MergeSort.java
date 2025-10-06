@@ -52,7 +52,7 @@ public class MergeSort {
         while (i < left.length) {
             arr[k] = left[i];
             i++;
-            k++;j
+            k++;
         }
         while (j < right.length) {
             arr[k] = right[j];
