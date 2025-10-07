@@ -12,9 +12,9 @@ public class SinglyLinkedList {
 		sll.insertAtTheBeginning(304);
 		sll.insertAtTheEnd(7777);
 		sll.insertAtAfterGivenElement(999, 101);
-		//sll.insertAtBeforeGivenElement(200, 101);
+		sll.insertAtBeforeGivenElement(200, 101);
 
-		
+
 		SinglyLinkedListNode temp = head;
 		System.out.println(temp.data);
 		System.out.println(temp.next);
@@ -25,15 +25,15 @@ public class SinglyLinkedList {
 		}
 	}
 	//
-	public void insertAtBeforeGivenElement(int value, int bvalue) {
+	public void insertAtBeforeGivenElement(int value , int bvalue) {
 		SinglyLinkedListNode newnode = new SinglyLinkedListNode(value);
 		SinglyLinkedListNode temp = head;
-		while(temp.next.data!=bvalue) {
+		while(temp.next!=null && temp.next.data!=bvalue) {
 			temp = temp.next;
 			
 		}
-		temp.next = value;
-		value.next = bvalue;
+		newnode.next = temp.next;
+		temp.next = newnode;
 	}
 //
 	public void insertAtAfterGivenElement(int value, int avalue) {
