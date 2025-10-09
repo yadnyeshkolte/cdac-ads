@@ -1,4 +1,4 @@
-package adsLabDay1;
+package adsDay1;
 
 public class MultiplicationTable {
 	public static void main(String[] args) {

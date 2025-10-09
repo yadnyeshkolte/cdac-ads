@@ -1,4 +1,4 @@
-package adsLabDay3;
+package adsDay3;
 
 public class FactoraiQuestion {
 	public static void main(String[] args) {

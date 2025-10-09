@@ -1,4 +1,4 @@
-package adsLabDay3;
+package adsDay3;
 
 import java.util.Arrays;
 

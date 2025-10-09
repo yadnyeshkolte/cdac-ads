@@ -1,4 +1,4 @@
-package adsLabDay1;
+package adsDay1;
 
 import java.util.Arrays;
 import java.util.Random;
@@ -24,20 +24,3 @@ public class BubbleSort {
 		System.out.println(Arrays.toString(arr));
 	}
 }
-/*
-
-	public static void bubbleSort(int[] arr) {
-		int i = arr.length;
-		while(i>1) {
-			for (int j=0; j<i-1;j++) {
-				if (arr[j]>arr[j+1]) {
-					int temp = arr[j];
-					arr[j]= arr[j+1];
-					arr[j+1]= temp;
-				}
-			}
-			i--;
-		}	
-	}
-
-*/

@@ -1,10 +1,10 @@
-package in.blr.cdac.pgdac.day4;
+package adsDay4;
 
 public class BinarySearchByRecursion {
 	
 	public static void main(String[] args) {
 		int[] arr = {4, 9, 11, 16, 19, 21, 25, 28};
-		System.out.println(new BinarySearchByRecursion().binarySearch(arr, 0, arr.length-1, 25));
+		System.out.println(new BinarySearchByRecursion().binarySearch(arr, 0, arr.length-1, 45));
 	}
 	
 	int binarySearch(int arr[], int low, int high, int temp) {

@@ -1,4 +1,4 @@
-package adsLabDay1;
+package adsDay1;
 /*
 Accept 2 String input from users like, 
 Please Enter the String 1: india
