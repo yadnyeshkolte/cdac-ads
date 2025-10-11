@@ -45,7 +45,7 @@ public class LinearQueue {
 		if(isEmpty()) {
 			System.out.println("Queue is Empty");
 		}
-		front++;
+		rear--;
 	}
 	void peek() {
 		if(isEmpty()) {
