@@ -7,7 +7,7 @@ public class SinglyLinkedList {
 		SinglyLinkedList sll = new SinglyLinkedList();
 		head = new SinglyLinkedListNode(99);
 		
-		sll.insertAtTheBeginning(98);
+		sll.insertAtTheBeginning(99998);
 		sll.insertAtTheBeginning(101);
 		sll.insertAtTheBeginning(304);
 		sll.insertAtTheEnd(7777);
