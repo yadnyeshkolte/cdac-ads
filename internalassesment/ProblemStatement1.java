@@ -24,8 +24,28 @@ class SinglyLinkedList{
 	Node head;
 	
 	public void deleteNode() {
-		
+		Node newNode = new Node(0);
+		newNode.next = head;
+		head = newNode;
+		Node prev = head;
+		Node temp = head.next;
+		Node tempn = head.next.next;
+		while(tempn!=null) {
+			//System.out.println(temp.data+" "+tempn.data);
+			if(temp.data<tempn.data) {
+				prev.next = tempn;
+				temp = prev.next;
+				tempn = temp.next;
+			}
+			else {
+				prev = prev.next;
+				temp = temp.next;
+				tempn = tempn.next;
+			}
+		}
+		head = head.next;
 	}
+	
 	public void addAtEnd(int value) {
 		Node newNode = new Node(value);
 		if(isEmpty()) {
