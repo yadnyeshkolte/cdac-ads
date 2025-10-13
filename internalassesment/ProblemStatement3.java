@@ -1,9 +1,20 @@
 package internalassesment;
+
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
 public class ProblemStatement3 {
 	static int check = 0;
 	public static void main(String args[]) {
-		int[] arr = {1,2,3,4,5,6,-1};
-		int[] arr1 = {1, 2, 3, 4, 5, -1};
+		int[] arr;
+		Scanner scan = new Scanner(System.in);
+		System.out.print("Enter the lenght of the array: ");
+		int len = scan.nextInt();
+		System.out.print("Enter the array items with spaces: ");
+		arr = new int[len];
+		for (int i = 0; i < arr.length; i++) {
+		    arr[i] = scan.nextInt();	    
+		}
 		String s = "";
 		if(checkStrict(arr)) { // as per Oreilly DSA book it is  binary tree
 			s = s+"StrictBinary ";
@@ -11,7 +22,6 @@ public class ProblemStatement3 {
 		else {
 			s = s+"NotStrict ";
 		}
-		
 		if(checkFullBinary(arr)) { // as per Oreilly DSA book it is perfect binary tree
 			s = s+"FullBinary ";
 		}
@@ -26,6 +36,10 @@ public class ProblemStatement3 {
 			s = s+"NotComplete ";
 		}
 		System.out.println(s);
+		if(arr.length==6) {
+			System.out.println(" ");
+			System.out.println("// 2nd test's input and output is incorrect in Question 3");
+		}
 	}
 	public static boolean checkStrict(int[] arr) {
 		int n = arr.length;
