@@ -6,30 +6,32 @@ public class ProblemStatement2 {
 	public static void main(String args[]) {
 		Scanner scan = new Scanner(System.in);
 		CircularLinkedList cll = new CircularLinkedList();
-		System.out.println(cll.isEmpty());
+		CircularLinkedList cll1 = new CircularLinkedList();
+		CircularLinkedList cll2 = new CircularLinkedList();
+		//System.out.println(cll.isEmpty());-+++++
 		System.out.print("Enter the C Linked List length: ");
-		// int input = scan.nextInt();
-		int input = 5;
+		int input = scan.nextInt();
+		int[] arr = new int[input];
 		System.out.print("Enter the value giving space to add: ");
-
-		int[] arr = { 10, 20, 30, 40, 50 };
-
-		for (int i = 0; i < arr.length; i++) {
-			cll.addAtEnd(arr[i]);
+		for(int i=0;i<input;i++) { 
+			arr[i] = scan.nextInt(); 
 		}
-
-		/*
-		 * for(int i=0;i<input;i++) { cll.addAtEnd(scan.nextInt()); }
-		 */
+		for(int i=0;i<input;i++) { 
+			cll.addAtEnd(arr[i]);
+			cll1.addAtEnd(arr[i]);
+			cll2.addAtEnd(arr[i]);
+			
+		}
 		System.out.print("Enter the Index Before Delete: ");
 		int input2 = scan.nextInt();
 		cll.displayCircularLinkedList();
-		CircularLinkedList cll1 = cll;
-		cll1.deleteBeforeIndex(input2);
+	
+		
+		cll1.deleteBeforePosition(input2);
 		cll1.displayCircularLinkedList();
-		//CircularLinkedList cll2 = cll;
-		//cll2.deleteAfterIndex(input2);
-		//cll2.displayCircularLinkedList();
+		
+		cll2.deleteAfterPosition(input2);
+		cll2.displayCircularLinkedList();
 
 	}
 }
@@ -40,7 +42,8 @@ class CircularLinkedList {
 
 	// 6
 	// 10 20 30 40 50 60
-	void deleteBeforeIndex(int index) {
+	void deleteBeforePosition(int pos) {
+		int index = pos-1;
 		if (index == 0) {
 			CNode temp = head;
 			while (temp.next != tail) {
@@ -61,18 +64,13 @@ class CircularLinkedList {
 			prev = temp;
 			temp = temp.next;
 		}
-		
-		System.out.println(prev.data + " " + temp.data+" "+temp.next.data);
 		prev.next = temp.next;
 	}
 
-	void deleteAfterIndex(int pos) {
+	void deleteAfterPosition(int pos) {
 		int index = pos-1;
-		//System.out.println(index);
 		CNode temp = head;
-		
 		if(index==4) {
-			
 			CNode decoy = head.next;
 			tail.next = decoy;
 			head = tail.next;
@@ -81,11 +79,7 @@ class CircularLinkedList {
 		for (int i = 0; i < index; i++) {
 			temp = temp.next;
 		}
-		
-		System.out.println(temp.data + " " + temp.next.data);
-		
 		CNode newNode = temp.next.next;
-		System.out.println(newNode.data+" NewNode ");
 		temp.next = newNode;
 	}
 	boolean isEmpty() {
