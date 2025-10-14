@@ -25,8 +25,7 @@ public class ProblemStatement2 {
 		}
 		System.out.print("Enter the Index Before Delete: ");
 		int input2 = scan.nextInt();
-		//cll.displayCircularLinkedList();
-	
+		cll.displayCircularLinkedList();
 		//referencing is important
 		cll1.deleteBeforePosition(input2);
 		cll1.displayCircularLinkedList();
