@@ -16,6 +16,7 @@ public class ProblemStatement2 {
 		for(int i=0;i<input;i++) { 
 			arr[i] = scan.nextInt(); 
 		}
+		int n = arr.length;
 		for(int i=0;i<input;i++) { 
 			cll.addAtEnd(arr[i]);
 			cll1.addAtEnd(arr[i]);
@@ -24,13 +25,13 @@ public class ProblemStatement2 {
 		}
 		System.out.print("Enter the Index Before Delete: ");
 		int input2 = scan.nextInt();
-		cll.displayCircularLinkedList();
+		//cll.displayCircularLinkedList();
 	
-		
+		//referencing is important
 		cll1.deleteBeforePosition(input2);
 		cll1.displayCircularLinkedList();
 		
-		cll2.deleteAfterPosition(input2);
+		cll2.deleteAfterPosition(input2, n);
 		cll2.displayCircularLinkedList();
 
 	}
@@ -67,10 +68,10 @@ class CircularLinkedList {
 		prev.next = temp.next;
 	}
 
-	void deleteAfterPosition(int pos) {
+	void deleteAfterPosition(int pos, int n) {
 		int index = pos-1;
 		CNode temp = head;
-		if(index==4) {
+		if(index==n-1) {
 			CNode decoy = head.next;
 			tail.next = decoy;
 			head = tail.next;
