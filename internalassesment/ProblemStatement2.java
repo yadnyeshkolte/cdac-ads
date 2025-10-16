@@ -43,28 +43,31 @@ class CircularLinkedList {
 	// 6
 	// 10 20 30 40 50 60
 	void deleteBeforePosition(int pos) {
-		int index = pos-1;
-		if (index == 0) {
-			CNode temp = head;
-			while (temp.next != tail) {
-				temp = temp.next;
-			}
-			temp.next = head;
-			tail = temp;
-			return;
-		}
-		if(index == 1) {
-			tail.next = head.next;
-			head = tail.next;
-			return;
-		}
-		CNode prev = null;
-		CNode temp = head;
-		for (int i = 1; i < index; i++) {
-			prev = temp;
-			temp = temp.next;
-		}
-		prev.next = temp.next;
+	    if (head == tail) {
+	    		return;
+	    }
+	    int index = pos - 1;
+	    if (index == 0) {
+	        CNode temp = head;
+	        while (temp.next != tail) {
+	            temp = temp.next;
+	        }
+	        temp.next = head;
+	        tail = temp;
+	        return;
+	    }
+	    if (index == 1) {
+	        tail.next = head.next;
+	        head = head.next;
+	        return;
+	    }
+	    CNode prev = null;
+	    CNode temp = head;
+	    for (int i = 1; i < index; i++) {
+	        prev = temp;
+	        temp = temp.next;
+	    }
+	    prev.next = temp.next;
 	}
 
 	void deleteAfterPosition(int pos, int n) {
@@ -87,25 +90,16 @@ class CircularLinkedList {
 	}
 
 	void addAtEnd(int value) {
-		CNode newNode = new CNode(value);
-		if (isEmpty()) {
-			head = newNode;
-			return;
-		}
-		if (tail == null) {
-			tail = newNode;
-			head.next = tail;
-			tail.next = head;
-			return;
-		}
-		CNode temp = head;
-		while (temp.next != head) {
-
-			temp = temp.next;
-			tail.next = newNode;
-			tail = newNode;
-			tail.next = head;
-		}
+	    CNode newNode = new CNode(value);
+	    if (isEmpty()) {
+	        head = newNode;
+	        head.next = head; 
+	        tail = head;
+	        return;
+	    }
+	    tail.next = newNode;
+	    tail = newNode;
+	    tail.next = head; 
 	}
 
 	void displayCircularLinkedList() {
