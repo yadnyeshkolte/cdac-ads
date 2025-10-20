@@ -30,7 +30,7 @@ public class BinaryTree {
 			return;
 		}
 		inOrder(current.left);
-		as.add(current.data);
+		as.add(current.data); // add between the 
 		inOrder(current.right);	
 	}
 	void preOrder(Node current) {
@@ -38,7 +38,7 @@ public class BinaryTree {
 			return;
 		}
 		as.add(current.data);
-		preOrder(current.left);
+		preOrder(current.left); //add first for the pre order
 		preOrder(current.right);
 	}
 	void postOrder(Node current) {
@@ -47,7 +47,7 @@ public class BinaryTree {
 		}
 		postOrder(current.left);
 		postOrder(current.right);
-		as.add(current.data);
+		as.add(current.data);   //add last for the post Order
 	}
 }
 class Node{
