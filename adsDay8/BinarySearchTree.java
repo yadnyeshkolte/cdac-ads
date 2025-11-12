@@ -6,7 +6,19 @@ public class BinarySearchTree {
 	public static void main(String[] args) {
 		BinarySearchTree bt = new BinarySearchTree();
 		System.out.println("Inserting items");
-		bt.insert(bt.root, 10);
+		bt.insert(bt.root, 40);
+		bt.insert(bt.root, 35);
+		bt.insert(bt.root, 45);
+		bt.insert(bt.root, 33);
+		bt.insert(bt.root, 44);
+		bt.insert(bt.root, 47);
+		bt.insert(bt.root, 32);
+		bt.insert(bt.root, 34);
+		bt.insert(bt.root, 36);
+		bt.insert(bt.root, 37);
+		
+		bt.preorder(bt.root);
+		
 	}
 	
 	public void insert(Tnode current, int value) {
@@ -38,7 +50,13 @@ public class BinarySearchTree {
 			}
 		}
 	}
-	
+	void preorder(Tnode current) {
+		if(current!=null) {
+			System.out.print(current.getData()+" ");
+			preorder(current.left);
+			preorder(current.right);
+		}
+	}
 }
 
 

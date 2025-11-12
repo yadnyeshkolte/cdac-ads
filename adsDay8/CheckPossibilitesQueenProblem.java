@@ -2,9 +2,10 @@ package adsDay8;
 
 import java.util.Arrays;
 
-public class Static4QueenProblem {
-	static int chessboardsize = 4 ;
-	public static void main(String[] args) {
+public class CheckPossibilitesQueenProblem {
+	static int chessboardsize = 4;
+	static int possibilits = 0;
+ 	public static void main(String[] args) {
 		intializeMatrix();
 	}
 	
@@ -31,23 +32,23 @@ public class Static4QueenProblem {
 		return true;
 	}
 	
-	static boolean selectLocation(int[][] matrix, int col) {
+	static void selectLocation(int[][] matrix, int col) {
 		if(col>=chessboardsize) {
-			return true;
+			possibilits++;
+			System.out.println("------------------");
+			displayMatrix(matrix);
+			System.out.println("------------------");
+			return;
 		}
 		for(int i=0; i<chessboardsize; i++) {
 			if(checkGoodPlace(matrix, i, col)) {
 				matrix[i][col] = 7;
 				
-				if(selectLocation(matrix, col+1)) {
-					return true;
-				}
+				selectLocation(matrix, col+1);
 				
 				matrix[i][col] = 0;
 			}
 		}
-		
-		return false;
 	}
 	
 	static void intializeMatrix() {
@@ -55,11 +56,17 @@ public class Static4QueenProblem {
 						{0,0,0,0}, 
 						{0,0,0,0},
 						{0,0,0,0}};
-		if(selectLocation(matrix, 0) == false) {
+		
+		selectLocation(matrix, 0);
+		
+		if(possibilits==0) {
 			System.out.println("Error cannot able to put Queen");
 			return;
 		}
-		displayMatrix(matrix);
+		else {
+			System.out.println("Total count: "+possibilits);
+			return;
+		}
 	}
 	
 	static void displayMatrix(int[][] matrix) {
