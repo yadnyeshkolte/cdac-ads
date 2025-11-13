@@ -1,4 +1,4 @@
-package practice.LinkedList;
+package practice;
 
 public class CircularLinkedList {
 	Cnode head;
@@ -19,7 +19,7 @@ public class CircularLinkedList {
 		cl.insetBeforeElement(35, 30);
 		cl.deleteLast();
 		cl.deleteFirst();
-		cl.deleteElement(30);
+		cl.deleteElement(10);
 		cl.displayCircularLinkedList();
 	}
 
@@ -43,8 +43,8 @@ public class CircularLinkedList {
 			temp = temp.next;
 		}
 		Cnode tempc = temp.next;
+		prev.next = null;
 		prev.next = tempc;
-		tempc = null;
 		
 	}
 	void deleteFirst() {
