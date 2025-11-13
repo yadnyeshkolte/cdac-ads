@@ -20,5 +20,18 @@ Learning Algorithms and Data Structures
 - DeleteFirstElement
 - DeleteAnElement
 - DisplyCircularLinkedList
+
+**Doubley Linked List Methods**
+- InsertAtEnd
+- InsertAtBeginning
+- InsertAfterElement
+- InsertBeforeElement
+- DeleteLastElement
+- DeleteFirstElement
+- DeleteAnElement
+- DisplyCircularLinkedList
+- DisplayReverse
+- Search
+- GetLength
   
 **Imp Archive** - https://github.com/yadnyeshkolte/store-room/blob/main/java-dsa/dsa-code-archive-document.pdf
