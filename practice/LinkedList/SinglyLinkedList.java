@@ -1,4 +1,4 @@
-package practice;
+package practice.LinkedList;
 
 public class SinglyLinkedList {
 	static Node head;

@@ -19,8 +19,17 @@ public class BinarySearchTree {
 		
 		bt.preorder(bt.root);
 		
+		System.out.println(bt.search(bt.root).data);
+		
 	}
 	
+	Tnode search(Tnode current) {
+		if(current.left==) {
+			
+		}
+		
+		return root;
+	}
 	public void insert(Tnode current, int value) {
 		if(current==null) {
 			current = new Tnode(value);
@@ -57,6 +66,7 @@ public class BinarySearchTree {
 			preorder(current.right);
 		}
 	}
+	
 }
 
 
