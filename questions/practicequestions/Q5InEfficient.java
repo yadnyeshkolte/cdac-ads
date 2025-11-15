@@ -51,13 +51,8 @@ public class Q5InEfficient {
 				index++;
 			}
 		}
-		System.out.println(index);
-		if(index==s.length() && para.isEmpty()) {
-			return true;
-		}
-		else {
-			return false;
-		}
+		//System.out.println(index);
+		return para.isEmpty();
 	}
 	static boolean check1(Stack<Character> para, Stack<Character> decoy, char ch) {
 		int len = para.size();
