@@ -8,41 +8,33 @@ import java.util.Scanner;
 
 public class Q8 {
 	public static void main(String[] args) {
-        int n = 5;
-        System.out.println("Input: " + n);
-        System.out.print("Output: ");
-        printBinaryNumbers(n);
-        System.out.println();
+		Scanner scan = new Scanner(System.in);
+		int n = scan.nextInt();
+		if(n<=0) {
+			System.out.println("Not valid number");
+			return;
+		}
+        printBinaryNumber(n);
 		
 	}
-	
-	   public static List<String> generateBinaryNumbers(int n) {
-	        List<String> result = new ArrayList<>();
-	        
-	        if (n <= 0) {
-	            return result;
-	        }
-	        
-	        Queue<String> queue = new LinkedList<>();
-	        
-
-	        queue.offer("1");
-
-	        for (int i = 0; i < n; i++) {
-
-	            String current = queue.poll();
-	            result.add(current);
-	            
-	            queue.offer(current + "0");
-	            queue.offer(current + "1");
-	        }
-	        
-	        return result;
-	    }
-	    
-
-	    public static void printBinaryNumbers(int n) {
-	        List<String> binaryNumbers = generateBinaryNumbers(n);
-	        System.out.println(String.join(" ", binaryNumbers));
-	    }
+	static void printBinaryNumber(int num) {
+		List<String> arr = new ArrayList<>();
+		Queue<String> que = new LinkedList<>();
+		
+		que.offer("1");
+		
+		for(int i=0;i<num;i++) {
+			String temp = que.poll();
+			arr.add(temp);
+			//storing only two in one for loop
+			//remember it ok
+			que.offer(temp+"0");
+			que.offer(temp+"1");
+		}
+		
+		for(String s: arr) {
+			System.out.print(s+" ");
+		}
+		
+	}
 }
