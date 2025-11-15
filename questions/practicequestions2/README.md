@@ -1,145 +1,340 @@
 # DSA Practice Set 2
 
-### Array Problems
+## 📋 Problem List
 
-#### 1. Find the Second Largest Element
+### Problem 1: Find the Second Largest Element
 **Difficulty:** Easy  
-**Input:** `[10, 20, 4, 45, 99]`  
-**Output:** `45`  
 **Topics:** Array Traversal, Comparison
 
-#### 3. Find the Missing Number (1 to N)
-**Difficulty:** Easy  
-**Input:** `[1, 2, 4, 5, 6]`  
-**Output:** `3`  
-**Topics:** Mathematical Formula, XOR
+**Input:**  
+```
+5
+10 20 4 45 99
+```
 
-#### 6. Maximum Sum of Contiguous Subarray (Kadane's Algorithm)
-**Difficulty:** Medium  
-**Input:** `[-2, 1, -3, 4, -1, 2, 1, -5, 4]`  
-**Output:** `6`  
-**Topics:** Dynamic Programming, Greedy
-
-#### 7. Move All Zeroes to End
-**Difficulty:** Easy  
-**Input:** `[0, 1, 0, 3, 12]`  
-**Output:** `[1, 3, 12, 0, 0]`  
-**Topics:** Two Pointers, Array Manipulation
-
-#### 8. Remove Duplicates from Sorted Array
-**Difficulty:** Easy  
-**Input:** `[1, 1, 2, 2, 3, 4]`  
-**Output:** `[1, 2, 3, 4]`  
-**Topics:** Two Pointers, In-place Modification
-
-#### 9. Binary Search Implementation
-**Difficulty:** Easy  
-**Input:** `[1, 3, 5, 7, 9]`, `key = 5`  
-**Output:** `Index 2`  
-**Topics:** Binary Search, Divide and Conquer
-
-#### 11. Find Intersection of Two Arrays
-**Difficulty:** Easy  
-**Input:** `[1, 2, 4, 5]`, `[2, 4, 6]`  
-**Output:** `[2, 4]`  
-**Topics:** Hash Set, Two Pointers
-
-#### 13. Rotate Array to Right by K Steps
-**Difficulty:** Medium  
-**Input:** `[1, 2, 3, 4, 5]`, `k = 2`  
-**Output:** `[4, 5, 1, 2, 3]`  
-**Topics:** Array Rotation, Reversal Algorithm
-
-#### 14. Selection Sort Implementation
-**Difficulty:** Easy  
-**Input:** `[64, 25, 12, 22, 11]`  
-**Output:** `[11, 12, 22, 25, 64]`  
-**Topics:** Sorting Algorithms, Selection Sort
+**Output:**  
+```
+45
+```
 
 ---
 
-### String Problems
-
-#### 2. Check if String is Palindrome
+### Problem 2: Check if String is Palindrome
 **Difficulty:** Easy  
-**Input:** `'madam'`  
-**Output:** `Yes`  
 **Topics:** Two Pointers, String Comparison
 
-#### 4. Reverse a String Without Built-in Functions
+**Input:**  
+```
+madam
+```
+
+**Output:**  
+```
+Yes
+```
+
+---
+
+### Problem 3: Find the Missing Number (1 to N)
 **Difficulty:** Easy  
-**Input:** `'hello'`  
-**Output:** `'olleh'`  
+**Topics:** Mathematical Formula, XOR
+
+**Input:**  
+```
+5
+1 2 4 5 6
+```
+
+**Output:**  
+```
+3
+```
+
+---
+
+### Problem 4: Reverse a String Without Built-in Functions
+**Difficulty:** Easy  
 **Topics:** String Manipulation, Two Pointers
 
-#### 5. Count Number of Vowels
+**Input:**  
+```
+hello
+```
+
+**Output:**  
+```
+olleh
+```
+
+---
+
+### Problem 5: Count Number of Vowels
 **Difficulty:** Easy  
-**Input:** `'Programming'`  
-**Output:** `3`  
 **Topics:** String Traversal, Character Checking
 
-#### 10. Check if Two Strings are Anagrams
+**Input:**  
+```
+Programming
+```
+
+**Output:**  
+```
+3
+```
+
+---
+
+### Problem 6: Maximum Sum of Contiguous Subarray (Kadane's Algorithm)
+**Difficulty:** Medium  
+**Topics:** Dynamic Programming, Greedy
+
+**Input:**  
+```
+9
+-2 1 -3 4 -1 2 1 -5 4
+```
+
+**Output:**  
+```
+6
+```
+
+---
+
+### Problem 7: Move All Zeroes to End
 **Difficulty:** Easy  
-**Input:** `'listen'`, `'silent'`  
-**Output:** `Yes`  
+**Topics:** Two Pointers, Array Manipulation
+
+**Input:**  
+```
+5
+0 1 0 3 12
+```
+
+**Output:**  
+```
+1 3 12 0 0
+```
+
+---
+
+### Problem 8: Remove Duplicates from Sorted Array
+**Difficulty:** Easy  
+**Topics:** Two Pointers, In-place Modification
+
+**Input:**  
+```
+6
+1 1 2 2 3 4
+```
+
+**Output:**  
+```
+1 2 3 4
+```
+
+---
+
+### Problem 9: Binary Search Implementation
+**Difficulty:** Easy  
+**Topics:** Binary Search, Divide and Conquer
+
+**Input:**  
+```
+5
+1 3 5 7 9
+5
+```
+
+**Output:**  
+```
+Index 2
+```
+
+---
+
+### Problem 10: Check if Two Strings are Anagrams
+**Difficulty:** Easy  
 **Topics:** Sorting, Hash Map, Frequency Count
 
-#### 12. First Non-Repeating Character
+**Input:**  
+```
+listen
+silent
+```
+
+**Output:**  
+```
+Yes
+```
+
+---
+
+### Problem 11: Find Intersection of Two Arrays
 **Difficulty:** Easy  
-**Input:** `'swiss'`  
-**Output:** `'w'`  
+**Topics:** Hash Set, Two Pointers
+
+**Input:**  
+```
+4
+1 2 4 5
+3
+2 4 6
+```
+
+**Output:**  
+```
+2 4
+```
+
+---
+
+### Problem 12: First Non-Repeating Character
+**Difficulty:** Easy  
 **Topics:** Hash Map, Frequency Count
 
-#### 18. Longest Common Prefix
-**Difficulty:** Easy  
-**Input:** `['flower', 'flow', 'flight']`  
-**Output:** `'fl'`  
-**Topics:** String Comparison, Vertical Scanning
+**Input:**  
+```
+swiss
+```
+
+**Output:**  
+```
+w
+```
 
 ---
 
-### Recursion Problems
+### Problem 13: Rotate Array to Right by K Steps
+**Difficulty:** Medium  
+**Topics:** Array Rotation, Reversal Algorithm
 
-#### 16. Factorial Using Recursion
-**Difficulty:** Easy  
-**Input:** `5`  
-**Output:** `120`  
-**Topics:** Recursion, Mathematical Operations
+**Input:**  
+```
+5
+1 2 3 4 5
+2
+```
 
-#### 17. Fibonacci Series (N Terms)
-**Difficulty:** Easy  
-**Input:** `5`  
-**Output:** `0 1 1 2 3`  
-**Topics:** Recursion, Dynamic Programming
+**Output:**  
+```
+4 5 1 2 3
+```
 
 ---
 
-### Stack Problems
-
-#### 15. Check for Balanced Parentheses
+### Problem 14: Selection Sort Implementation
 **Difficulty:** Easy  
-**Input:** `'((()))'`  
-**Output:** `Balanced`  
+**Topics:** Sorting Algorithms, Selection Sort
+
+**Input:**  
+```
+5
+64 25 12 22 11
+```
+
+**Output:**  
+```
+11 12 22 25 64
+```
+
+---
+
+### Problem 15: Check for Balanced Parentheses
+**Difficulty:** Easy  
 **Topics:** Stack, Bracket Matching
 
+**Input:**  
+```
+((()))
+```
+
+**Output:**  
+```
+Balanced
+```
+
 ---
 
-### Linked List Problems
-
-#### 19. Reverse a Linked List
+### Problem 16: Factorial Using Recursion
 **Difficulty:** Easy  
-**Input:** `1 -> 2 -> 3 -> 4`  
-**Output:** `4 -> 3 -> 2 -> 1`  
+**Topics:** Recursion, Mathematical Operations
+
+**Input:**  
+```
+5
+```
+
+**Output:**  
+```
+120
+```
+
+---
+
+### Problem 17: Fibonacci Series (N Terms)
+**Difficulty:** Easy  
+**Topics:** Recursion, Dynamic Programming
+
+**Input:**  
+```
+5
+```
+
+**Output:**  
+```
+0 1 1 2 3
+```
+
+---
+
+### Problem 18: Longest Common Prefix
+**Difficulty:** Easy  
+**Topics:** String Comparison, Vertical Scanning
+
+**Input:**  
+```
+3
+flower
+flow
+flight
+```
+
+**Output:**  
+```
+fl
+```
+
+---
+
+### Problem 19: Reverse a Linked List
+**Difficulty:** Easy  
 **Topics:** Linked List, Pointer Manipulation
 
+**Input:**  
+```
+4
+1 2 3 4
+```
+
+**Output:**  
+```
+4 3 2 1
+```
+
 ---
 
-### Mathematical Problems
-
-#### 20. Check if Number is Prime
+### Problem 20: Check if Number is Prime
 **Difficulty:** Easy  
-**Input:** `17`  
-**Output:** `Yes`  
 **Topics:** Mathematics, Number Theory
 
----
+**Input:**  
+```
+17
+```
+
+**Output:**  
+```
+Yes
+```
+
