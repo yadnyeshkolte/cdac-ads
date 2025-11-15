@@ -1,7 +1,7 @@
 package questions.practicequestions;
 import java.util.Scanner;
 
-public class Q3 {
+public class Q4 {
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
 		int len = scan.nextInt();
@@ -9,44 +9,37 @@ public class Q3 {
 			System.out.println("Invalid Input");
 			return;
 		}
-		SinglyLinkedList sll = new SinglyLinkedList();
+		SinglyLinkedListDelete sll = new SinglyLinkedListDelete();
 		for(int i=0;i<len;i++) {
 			sll.insertAtEnd(scan.nextInt());
 		}
-		int pos = scan.nextInt();
-		int value = scan.nextInt();
 		
-		if(pos>len) {
-			sll.insertAtEnd(value);
-		}
-		else {
-			sll.insertAtPosition(pos, value);
-		}
-		sll.displayLinkedList();
+		int value = scan.nextInt();
+		sll.deleteItem(value);
+
 	}
 }
 
-class SinglyLinkedList{
+class SinglyLinkedListDelete{
 	Dnode head;
 	
-	void insertAtPosition(int pos, int value) {
-		Dnode newnode = new Dnode(value);
-		if(pos==1) {
-			newnode.next = head;
-			head = newnode;
+	void deleteItem(int value) {
+		if(head.data == value) {
+			head = head.next;
 			return;
 		}
 		Dnode temp = head;
 		Dnode prev = null;
-		int count = 1;
-		while(count<pos) {
+		while(temp.next!=null && temp.data!=value) {
 			prev = temp;
-			temp = temp.next;
-			count++;
+			temp=temp.next;
 		}
-		newnode.next = temp;
-		prev.next = newnode;
-		
+		if(temp.data!=value && temp.next==null) {
+			System.out.println("Not Found");
+			return;
+		}
+		prev.next = temp.next;
+		displayLinkedList();
 	}
 	void insertAtEnd(int value){
 		Dnode newnode = new Dnode(value);
@@ -69,10 +62,10 @@ class SinglyLinkedList{
 		System.out.print(temp.data);
 	}
 }
-class Node{
+class Dnode{
 	int data;
 	Dnode next;
-	Node(int data){
+	Dnode(int data){
 		this.data = data;
 		next = null;
 	}
