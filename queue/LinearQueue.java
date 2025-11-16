@@ -3,60 +3,64 @@ package queue;
 import java.util.Arrays;
 
 public class LinearQueue {
-//https://www.geeksforgeeks.org/dsa/array-implementation-of-queue-simple/
-	int arr[], capacity, front, rear;
-	public LinearQueue(int size) {
-		arr = new int[size];
-		capacity = size;
-		rear = -1;
-		front = 0;
+	int[] arr;
+	int capacity;
+	int end;
+	LinearQueue(int size){
+		this.arr = new int[size];
+		this.capacity= 0;
+		this.end = -1;
 	}
+	
 	public static void main(String[] args) {
-		LinearQueue lq = new LinearQueue(8);
-		System.out.println(lq.isEmpty());
-		System.out.println(lq.isFull());
-		lq.enqueue(44);
-		lq.enqueue(41);
-		lq.enqueue(33);
-		lq.enqueue(23);
-		lq.enqueue(89);
-
-		lq.dequeue();
-		lq.dequeue();
-		lq.dequeue();
-		lq.dequeue();
-		lq.peek();
+		LinearQueue lque = new LinearQueue(5);
+		lque.enqueue(1);
+		lque.enqueue(2);
+		lque.enqueue(3);
+		lque.enqueue(4);
+		lque.enqueue(5);
+		lque.enqueue(1);
+		lque.dequeue();
+		lque.enqueue(6);
+		lque.peek();
 		
-		for(int i =lq.front;i<=lq.rear;i++) {
-			System.out.print(lq.arr[i]+" ");
-		}
-		System.out.println(" ");
-		
-		System.out.println(Arrays.toString(lq.arr));
+		System.out.println(Arrays.toString(lque.arr));
 	}
-	void enqueue(int item) {
-		if(isFull()) {
-			System.out.println("Queue is Full");
-		}
-		arr[++rear] = item;
-		
-	}
+	
 	void dequeue() {
 		if(isEmpty()) {
-			System.out.println("Queue is Empty");
+			System.out.println("Cannot remove");
+			return;
 		}
-		rear--;
+		System.out.println(end);
+		for(int i=1;i<=end;i++) {
+			arr[i-1] = arr[i];
+
+		}
+		end--;
+		capacity--;
+		
+	}
+	void enqueue(int value) {
+		if(isFull()) {
+			System.out.println("Cannot able to Enqueue");
+			return;
+		}
+		arr[++end] = value;
+		capacity++;
 	}
 	void peek() {
 		if(isEmpty()) {
-			System.out.println("Queue is Empty");
+			System.out.println("It is Empty");
+			return;
 		}
-		System.out.println("Front is: "+arr[front]);
+		System.out.println("Peek is "+arr[0]);
 	}
-	boolean isFull() {
-		return rear == capacity-1;
+	
+	boolean isFull(){
+		return capacity == arr.length;
 	}
 	boolean isEmpty() {
-		return front > rear;
+		return end==-1;
 	}
 }
