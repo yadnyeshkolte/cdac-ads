@@ -1,25 +1,42 @@
 package searching;
-
+import java.util.Arrays;
+import java.util.Random;
 public class BinarySearchByRecursion {
 	
 	public static void main(String[] args) {
-		int[] arr = {4, 9, 11, 16, 19, 21, 25, 28};
-		System.out.println(new BinarySearchByRecursion().binarySearch(arr, 0, arr.length-1, 45));
+		Random ra = new Random();
+		int[] arr = {9, 26, 36, 40, 40, 50, 56, 72, 82, 96};
+
+		Arrays.sort(arr);
+		System.out.println(Arrays.toString(arr));
+		int num = binarySearch(arr, 0, arr.length-1, 36);
+
+		if(num==-1) {
+			System.out.println("Cannot able to find");
+		}
+		else {
+			System.out.println(num);
+		}
 	}
 	
-	int binarySearch(int arr[], int low, int high, int temp) {
-		// termination condition: when the low becomes equal to or more than high
-		if(low>=high) {
+	public static int binarySearch(int[] arr, int left, int right, int value) {
+		if(left>right) {
 			return -1;
 		}
-		int mid = (low+high)/2;
-		if(temp == arr[mid]) { // if the element searched for is present at MID or not
+		int mid = (left+right)/2;
+		if(arr[mid]==value) {
 			return mid;
 		}
-		if(temp < arr[mid]) {  // if true implies that the element searched for may be present in LEFT half
-			return binarySearch(arr, low, mid-1, temp);
+		else if(value<arr[mid]) {
+			return binarySearch(arr, left, mid-1, value);
 		}
-		// if true implies that the element searched for may be present in RIGHT half
-		return binarySearch(arr, mid+1, high, temp); 
+		else {
+			return binarySearch(arr, mid+1, right, value);
+		}
+
 	}
+	
+
+
+	
 }

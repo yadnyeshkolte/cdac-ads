@@ -3,68 +3,63 @@ package stack;
 import java.util.Arrays;
 
 public class StackUsingArray {
-
-	static int arr[];
-	int indexT=-1;
-	int capacity=0;
-	
-	public StackUsingArray(int size) {
-		capacity = size;
-		arr = new int[capacity];
-		indexT = -1;
+	int arr[];
+	int top;
+	int capacity;
+	StackUsingArray(int size){
+		this.arr = new int[size];
+		this.top = -1;
+		this.capacity = 0;
 	}
 	
 	public static void main(String[] args) {
-		StackUsingArray sua = new StackUsingArray(5);
-		sua.push(10);
-		sua.push(10);
-		sua.push(10);
-		sua.push(10);
-		sua.push(12);
-		sua.peek();
+		StackUsingArray scc = new StackUsingArray(5);
+		scc.push(1);
+		scc.push(2);
+		scc.push(3);
+		scc.push(4);
+		scc.push(5);
+		scc.pop();
+		scc.push(6);
+		scc.pop();
+		scc.peek();
 		
-		System.out.println(Arrays.toString(arr));
+		
+		System.out.println(Arrays.toString(scc.arr));
 	}
 	
-	// push operation is to add element to the top of the stack
-	// Check if the stack is full (overflow)
-	public void push(int item) {
+	void push(int value) {
 		if(isFull()) {
-			System.out.println("Stack Overflow!!!");
+			System.out.print("Cannot able to push");
 			return;
 		}
-		arr[++indexT] = item;
+		arr[++top] = value;
+		capacity++;
 	}
-	
-	// delete the top element from the stack
-	// is the stack empty (prerequisite)
-	public void pop() {
+	void pop() {
 		if(isEmpty()) {
-			System.out.println("Stack Underflow!!!");
+			System.out.print("It is Empty Cannot pop");
 			return;
 		}
-		indexT--;
+		top--;
+		capacity--;
 	}
-	
-	// is to check the element present in the top of the stack
-	// is the stack empty (prerequisite)
-	public void peek() {
+	void peek() {
 		if(isEmpty()) {
-			System.out.println("Stack Underflow!!!");
+			System.out.print("-1");
 			return;
 		}
-		System.out.println("the top element is: "+arr[indexT]);
+		if(isFull()) {
+			System.out.println(arr[arr.length-1]);
+			return;
+		}
+		System.out.println(arr[top]);
+		
 	}
-
-	// check if the stack in empty.
-	// this is a prerequisite check for pop() and peek() operation 
-	boolean isEmpty() {
-		return indexT==-1;
-	}
-	
-	// checks if the stack is full.
-	// this is a prerequisite check for push() operation
 	boolean isFull() {
-		return indexT == capacity-1;
+		return capacity==arr.length;
+	}
+	boolean isEmpty() {
+		return top==-1;
 	}
 }
