@@ -78,3 +78,89 @@ public class PriorityQueue {
         System.out.println(Arrays.toString(pq.arr));
     }
 }
+
+
+/*
+yadnyesh
+
+package queue;
+
+import java.util.Arrays;
+
+public class Test {
+	int arr[];
+	int start;
+	int end;
+	int capacity;
+	
+	Test(int size){
+		this.arr = new int[size];
+		start = 0;
+		end = -1;
+		capacity = size;
+	}
+	
+	public static void main(String[] args) {
+		Test pq = new Test(5);
+
+		pq.enqueue(5);
+		pq.enqueue(10);
+		pq.enqueue(15);
+		pq.enqueue(2);
+		pq.enqueue(1);
+		pq.enqueue(7);
+		pq.dqueue();
+		pq.dqueue();
+		pq.enqueue(11);
+		pq.enqueue(12);
+	
+		pq.dqueue();
+		pq.peek();
+		System.out.println(Arrays.toString(pq.arr));
+	}
+	
+	void peek() {
+		if(isEmpty()) {
+			System.out.println("Queue is Empty");
+			return;
+		}
+		System.out.println(arr[end]+" "+end);
+	}
+	void dqueue() {
+		if(isEmpty()) {
+			System.out.println("Queue is Empty");
+			return;
+		}
+		
+		for(int i =1; i<=end;i++) {
+			arr[i-1]  = arr[i];
+		}
+		end--;
+	}
+	void enqueue(int value) {
+		if(isFull()) {
+			System.out.println("Queue is full");
+			return;
+		}
+		arr[++end] = value;
+		int len = end;
+		while(len>=start) {
+			for(int i=0;i<len; i++) {
+				if(arr[i]>arr[i+1]) {
+					int temp = arr[i];
+					arr[i] = arr[i+1];
+					arr[i+1] = temp;
+				}
+			}
+			len--;
+		}
+ 	}
+	boolean isFull() {
+		return end == capacity-1;
+	}
+	boolean isEmpty() {
+		return end < start;  
+	}
+}
+
+*/

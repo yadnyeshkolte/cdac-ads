@@ -3,110 +3,109 @@ package queue;
 import java.util.Arrays;
 
 public class CircularQueue {
-    // https://www.geeksforgeeks.org/dsa/introduction-to-circular-queue/
-    int arr[], size, front, rear, capacity;
 
-    public CircularQueue(int capacity) {
-        arr = new int[capacity];
-        size = 0;
-        front = -1;
-        rear = -1;
-        this.capacity = capacity;
+    int arr[];
+    int size;
+    int end;
+    int start;
+
+    public CircularQueue(int n) {
+        arr = new int[n];
+        size = n;
+        end = -1;
+        start = -1;
+    }
+
+    public boolean isEmpty() {
+        return end == -1 && start == -1;
+    }
+
+    public boolean isFull() {
+        return (end + 1) % size == start;
+    }
+
+    public void enqueue(int data) {
+        if (isFull()) {
+            System.out.println("Queue is full");
+            return;
+        }
+
+        if (isEmpty()) {
+            start = 0;
+        }
+
+        //System.out.println(end+" = "+(end + 1) % size+"|"+(end+1)+" % "+size);
+        end = (end + 1) % size;
+        arr[end] = data;
+    }
+
+    public int dequeue() {
+        if (isEmpty()) {
+            System.out.println("Queue is empty");
+            return -1;
+        }
+
+        int result = arr[start];
+
+        if (end == start) {
+            end = start = -1;
+        } else {
+            start = (start + 1) % size;
+        }
+
+        return result;
+    }
+
+    public int peek() {
+        if (isEmpty()) {
+            System.out.println("Queue is empty");
+            return -1;
+        }
+        return arr[start];
+    }
+
+    public void display() {
+        if (isEmpty()) {
+            System.out.println("Queue is empty");
+            return;
+        }
+
+        int i = start;
+        System.out.print("Queue: ");
+        while (true) {
+            System.out.print(arr[i] + " ");
+            if (i == end) break;
+            i = (i + 1) % size;
+        }
+        System.out.println();
     }
 
     public static void main(String[] args) {
-        CircularQueue cq = new CircularQueue(4);
+        CircularQueue cq = new CircularQueue(5);
+        cq.enqueue(10);
+        cq.enqueue(20);
+        cq.enqueue(30);
+        cq.enqueue(40);
+        cq.enqueue(50);
+        cq.enqueue(60);
+        cq.display();
 
-        cq.enqueue(12);
-        cq.enqueue(45);
-        cq.enqueue(23);
-        cq.displayQueue();
-        cq.dequeue();
-        cq.enqueue(514);
-        cq.displayQueue();
-        cq.enqueue(54);
-        cq.displayQueue();
-
-        System.out.println("===================================");
-        cq.enqueue(22);
-        cq.displayQueue();
-        cq.enqueue(90);
-        cq.displayQueue();
-        cq.enqueue(89);
-        cq.displayQueue();
-
-        System.out.println("===================================");
+        System.out.println("Peek: " + cq.peek());
 
         cq.dequeue();
-        cq.displayQueue();
-        cq.enqueue(33);
-        cq.displayQueue();
-        cq.peek();
-    }
+        cq.dequeue();
+        cq.display();
 
-    void displayQueue() {
-        if (isEmpty()) {
-            System.out.println("[]");
-            return;
-        }
-        System.out.print("[");
-        int i = front;
-        for (int cnt = 0; cnt < size; cnt++) {
-            System.out.print(arr[i]);
-            if (cnt != size - 1) {
-                System.out.print(", ");
-            }
-            i = (i + 1) % capacity;
-        }
-        System.out.print("]");
+        cq.enqueue(50);
+        cq.enqueue(60);
+        cq.enqueue(70);
         
-        System.out.print(" Front is: "+front);
-        System.out.print(" Rear is: "+rear);
+        cq.dequeue();
+        cq.dequeue();
         
-        System.out.println(" "+Arrays.toString(arr));
-    }
-
-    void enqueue(int item) {
-        if (isFull()) {
-            System.out.println("Full Circular Queue");
-            return;
-        }
-        rear = (rear + 1) % capacity;
-        arr[rear] = item;
-        if (front == -1) {
-            front = rear;
-        }
-        size++;
-    }
-
-    void dequeue() {
-        if (isEmpty()) {
-            System.out.println("Empty Circular Queue");
-            return;
-        }
-        int removed = arr[front];
-        front = (front + 1) % capacity;
-        size--;
-        if (size == 0) {
-            rear = -1;
-            front = -1;
-        }
-        System.out.println("Dequeued value is: " + removed);
-    }
-
-    void peek() {
-        if (isEmpty()) {
-            System.out.println("Empty Circular Queue");
-            return;
-        }
-        System.out.println("Peek value is: " + arr[front]);
-    }
-
-    boolean isFull() {
-        return size == capacity;
-    }
-
-    boolean isEmpty() {
-        return size == 0;
+        cq.enqueue(80);
+        cq.display();
+        
+        System.out.println(Arrays.toString(cq.arr));
     }
 }
